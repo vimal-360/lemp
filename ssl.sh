@@ -8,10 +8,9 @@ fi
 
 # Check for at least one domain name
 if [ "$#" -lt "1" ]; then
-    echo "Usage: $0 domain1.com domain2.com" >&2
+    echo "Usage: $0 domain1.com sub.domain1.com" >&2
     exit 1
 fi
-
 
 # Validate each domain and subdomain
 for domain in "$@"; do
