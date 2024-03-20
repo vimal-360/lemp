@@ -27,10 +27,14 @@ domains=("$@")
 # Install Certbot and its Nginx plugin if not already installed
 if ! command -v certbot > /dev/null 2>&1; then
     echo "Certbot not found, installing it..."
-    snap install core; snap refresh core
-    snap install --classic certbot
-    ln -s /snap/bin/certbot /usr/bin/certbot
+    apt-get update
+    apt-get install -y software-properties-common
+    add-apt-repository -y universe
+    add-apt-repository -y ppa:certbot/certbot
+    apt-get update
+    apt-get install -y certbot python3-certbot-nginx
 fi
+
 
 if ! certbot --nginx -v > /dev/null 2>&1; then
     echo "Certbot Nginx plugin not found, installing it..."
