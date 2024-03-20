@@ -14,6 +14,7 @@ fi
 
 # Validate each domain and subdomain
 for domain in "$@"; do
+    echo "Checking domain: '$domain'"
     if ! [[ $domain =~ ^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
         echo "Invalid domain name: $domain" >&2
         exit 1
