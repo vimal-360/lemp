@@ -12,7 +12,8 @@ if [ "$#" -lt "1" ]; then
     exit 1
 fi
 
-# Validate each domain
+
+# Validate each domain and subdomain
 for domain in "$@"; do
     if ! [[ $domain =~ ^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$ ]]; then
         echo "Invalid domain name: $domain" >&2
