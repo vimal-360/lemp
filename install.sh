@@ -31,10 +31,19 @@ curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compo
 chmod +x ~/.docker/cli-plugins/docker-compose
 docker compose version
 
+
+
+mkdir -p ~/.lemp/config/nginx.conf
+mkdir -p ~/.lemp/config/supervisor.conf
+
+
 # install nginx
 sudo apt install nginx -y
 # symlink config/nginx.conf
 # sudo ln -s /var/www/html/config/nginx.conf /etc/nginx/sites-available/nginx.conf
+
+
+
 
 ## remove folder
 sudo rm -rf /etc/nginx/sites-enabled
